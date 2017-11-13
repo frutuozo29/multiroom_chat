@@ -15,7 +15,7 @@ var app = express();
 
 /** Configurações de modulos e middlewares do express */
 app.set('view engine', 'ejs');
-app.set('view', './app/views');
+app.set('views', './app/views');
 
 app.use(express.static('./app/public'));
 
