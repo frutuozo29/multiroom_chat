@@ -8,5 +8,8 @@ module.exports.iniciaChat = function (application, req, res) {
     if(errors) {
         res.render('index', { validacao: errors });
     }
-    res.render('chat');
+
+    application.get('io').emit('msgParaCliente', { apelido: dadosForm.apelido, mensagem: ' acabou de se conectar.'});
+
+    res.render('chat', { dadosForm: dadosForm });
 }
